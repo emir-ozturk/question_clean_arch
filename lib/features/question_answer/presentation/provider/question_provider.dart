@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:question_clean_arch/features/question_answer/data/models/models.dart';
 import 'package:question_clean_arch/features/question_answer/data/use_case/use_cases.dart';
-import 'package:question_clean_arch/features/question_answer/domain/entities/entities.dart';
 
 class QuestionProvider with ChangeNotifier {
   // Use cases
@@ -10,8 +10,8 @@ class QuestionProvider with ChangeNotifier {
 
   // State
   bool isLoading = false;
-  List<CategoryEntity> categories = [];
-  List<QuestionEntity> questions = [];
+  List<CategoryModel> categories = [];
+  List<QuestionModel> questions = [];
   String? errorMessage;
 
   // Utils

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AppError extends StatelessWidget {
@@ -7,11 +8,17 @@ class AppError extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        errorMessage,
-        style: Theme.of(context).textTheme.bodyMedium,
-        maxLines: 5,
-        overflow: TextOverflow.ellipsis,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(Icons.error, size: 40, color: Colors.red),
+          SelectableText(
+            errorMessage.tr(),
+            style: Theme.of(context).textTheme.bodyLarge,
+            maxLines: 5,
+          ),
+        ],
       ),
     );
   }

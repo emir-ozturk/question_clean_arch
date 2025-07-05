@@ -11,22 +11,36 @@ class QuestionApiService {
   Future<List<QuestionModel>> getQuestions(int categoryId) async {
     try {
       final response = await _dio.get('/sorular/$categoryId');
-      return (response.data['sorular'] as List).map((e) => QuestionModel.fromJson(e)).toList();
+      final data = response.data;
+
+      if (data == null || data['sorular'] == null) {
+        throw Exception('Invalid response format');
+      }
+
+      return (data['sorular'] as List)
+          .map((e) => QuestionModel.fromJson(e as Map<String, dynamic>))
+          .toList();
     } on DioException catch (e) {
       throw Exception(DioErrorHandler.handle(e));
     } catch (e) {
-      throw Exception(e);
+      throw Exception('Failed to parse questions: $e');
     }
   }
 
   Future<List<CategoryModel>> getCategories(String languageCode) async {
     try {
       final response = await _dio.get('/kategoriler', queryParameters: {'lang': languageCode});
-      return response.data.map((e) => CategoryModel.fromJson(e)).toList();
+      final data = response.data;
+
+      if (data == null) {
+        throw Exception('Invalid response format');
+      }
+
+      return (data as List).map((e) => CategoryModel.fromJson(e as Map<String, dynamic>)).toList();
     } on DioException catch (e) {
       throw Exception(DioErrorHandler.handle(e));
     } catch (e) {
-      throw Exception(e);
+      throw Exception('Failed to parse categories: $e');
     }
   }
 }
