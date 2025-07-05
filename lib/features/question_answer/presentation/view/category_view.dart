@@ -31,7 +31,14 @@ class _CategoryViewState extends State<CategoryView> {
       body: Consumer<QuestionProvider>(
         builder: (context, provider, child) {
           if (provider.isLoading) return const AppLoading();
-          if (provider.errorMessage != null) return AppError(errorMessage: provider.errorMessage!);
+          if (provider.errorMessage != null) {
+            return AppError(
+              errorMessage: provider.errorMessage!,
+              onPressed: () async {
+                await provider.getCategories(context.locale.languageCode);
+              },
+            );
+          }
 
           return CategoryListBuilder(categories: provider.categories);
         },

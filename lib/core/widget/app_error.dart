@@ -2,8 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AppError extends StatelessWidget {
-  const AppError({super.key, required this.errorMessage});
+  const AppError({super.key, required this.errorMessage, required this.onPressed});
   final String errorMessage;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,7 @@ class AppError extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyLarge,
             maxLines: 5,
           ),
+          ElevatedButton(onPressed: onPressed, child: Text('Try Again'.tr())),
         ],
       ),
     );
