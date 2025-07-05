@@ -7,6 +7,23 @@
         "search": "Arama",
         "cant_find": "Aradığım Soru Burada Yok",
         "warning": "Dikkat",
-        "please_select_category": "Lütfen bir kategori seçin"
+        "please_select_category": "Lütfen bir kategori seçin",
+        "offline": "Tüm Sorular (Çevrimdışı)"
+    },
+    "error": {
+        "connection_timeout": "Bağlantı zaman aşımı",
+        "send_timeout": "Gönderim zaman aşımı",
+        "connection_error": "Bağlantı hatası",
+        "bad_request": "Hatalı istek",
+        "unauthorized": "Yetkisiz",
+        "not_found": "Bulunamadı",
+        "internal_server_error": "Sunucu hatası",
+        "server_error": "Sunucu hatası",
+        "type": {
+            "400": "Hatalı istek",
+            "401": "Yetkisiz",
+            "404": "Bulunamadı",
+            "500": "Sunucu hatası"
+        }
     }
 }

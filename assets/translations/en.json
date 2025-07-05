@@ -9,5 +9,21 @@
         "warning": "Warning",
         "please_select_category": "Please select a category",
         "offline": "All Questions (Offline)"
+    },
+    "error": {
+        "connection_timeout": "Connection timed out",
+        "send_timeout": "Request timed out",
+        "connection_error": "No internet connection",
+        "bad_request": "Bad request",
+        "unauthorized": "Unauthorized",
+        "not_found": "Not found",
+        "internal_server_error": "Internal server error",
+        "server_error": "Server error",
+        "type": {
+            "400": "Bad request",
+            "401": "Unauthorized",
+            "404": "Not found",
+            "500": "Internal server error"
+        }
     }
 }
