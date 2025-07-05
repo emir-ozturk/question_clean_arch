@@ -1,0 +1,12 @@
+{
+    "questions": {
+        "title": "Soru - Cevap",
+        "select_category": "Konu Seç",
+        "form_url": "https://docs.google.com/forms/d/e/1FAIpQLScOExSBLZYDOI4ahOnkqusmJ5KlJVmb5LScow4n9MPL0u1Eew/viewform",
+        "loading": "Yükleniyor...",
+        "search": "Arama",
+        "cant_find": "Aradığım Soru Burada Yok",
+        "warning": "Dikkat",
+        "please_select_category": "Lütfen bir kategori seçin"
+    }
+}

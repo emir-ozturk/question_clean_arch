@@ -1,0 +1,13 @@
+{
+    "questions": {
+        "title": "Questions - Answers",
+        "select_category": "Select Topic",
+        "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfcAKixtQtyPnUfyN-o-W3BT8NMoIO5OPMhej4dW2xciOY4FA/viewform",
+        "loading": "Loading...",
+        "search": "Search",
+        "cant_find": "Can't find my question",
+        "warning": "Warning",
+        "please_select_category": "Please select a category",
+        "offline": "All Questions (Offline)"
+    }
+}
