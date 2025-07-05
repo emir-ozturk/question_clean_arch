@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:question_clean_arch/core/error/dio_error_handler.dart';
-import 'package:question_clean_arch/features/question_answer/data/models/category_model.dart';
-import 'package:question_clean_arch/features/question_answer/data/models/question_model.dart';
+import 'package:question_clean_arch/features/question_answer/data/models/models.dart';
 
 class QuestionApiService {
   final Dio _dio;
