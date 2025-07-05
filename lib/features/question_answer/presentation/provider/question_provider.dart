@@ -6,6 +6,7 @@ class QuestionProvider with ChangeNotifier {
   // Use cases
   final GetCategoriesUseCase _getCategoriesUseCase;
   final GetQuestionsUseCase _getQuestionsUseCase;
+  final GetQuestionsLocalUseCase _getQuestionsLocalUseCase;
 
   // State
   bool isLoading = false;
@@ -19,7 +20,11 @@ class QuestionProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  QuestionProvider(this._getCategoriesUseCase, this._getQuestionsUseCase);
+  QuestionProvider(
+    this._getCategoriesUseCase,
+    this._getQuestionsUseCase,
+    this._getQuestionsLocalUseCase,
+  );
 
   Future<void> getCategories(String languageCode) async {
     _toggleLoading();
@@ -27,6 +32,8 @@ class QuestionProvider with ChangeNotifier {
     try {
       categories = await _getCategoriesUseCase(languageCode);
     } catch (e) {
+      // Eğer bir hata oluşursa, yerel dosyadan soruları çek.
+      questions = await _getQuestionsLocalUseCase(languageCode);
       errorMessage = e.toString();
     } finally {
       _toggleLoading();
