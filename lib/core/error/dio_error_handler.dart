@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class DioErrorHandler {
   static String handle(DioException error) {
+    log(error.toString());
+
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
         return 'error.connection_timeout'.tr();
